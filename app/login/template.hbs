@@ -1,0 +1,23 @@
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+      {{#paper-sidenav-toggle as |z|}}
+        {{#paper-button click=(action "toggleMenu" target=z) iconButton=true}}{{paper-icon "menu"}}{{/paper-button}}
+      {{/paper-sidenav-toggle}}
+      <span class="md-breadcrumb-page">Login</span>
+  </div>
+{{/paper-toolbar}}
+
+{{#paper-content flex=true scroll-y=true layout-padding=true}}
+  {{#simple-form onsubmit=(action login) as |formValues|}}
+    <div layout="column">
+      {{paper-input flex=30 label="Email" value=formValues.email}}
+      {{paper-input flex=40 label="Password" type="password" value=formValues.password}}
+    </div>
+
+    <div layout="column" class="actions">
+      {{#paper-button primary=true raised=true}}Submit{{/paper-button}}
+      {{#paper-button click=(action twitter) primary=true raised=true}}Login With Twitter{{/paper-button}}
+    </div>
+  {{/simple-form}}
+
+{{/paper-content}}

@@ -4,6 +4,14 @@ module.exports = function(environment) {
   var ENV = {
     apiHost: 'http://localhost:3000',
 
+    torii: {
+      providers: {
+        'twitter': {
+          requestTokenUri: 'http://localhost:3000/auth/twitter',
+        },
+      },
+    },
+
     modulePrefix: 'instagrump',
     environment: environment,
     baseURL: '/',
