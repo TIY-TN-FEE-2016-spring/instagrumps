@@ -14,15 +14,13 @@ export default Ember.Controller.extend({
   },
 
 
-  twitter() {
+  twitter(ev) {
+    ev.preventDefault();
+
     this.get(`session`).authenticate(`authenticator:torii`, `twitter`)
       .then((x) => {
-        console.log(x)
-        debugger
       })
       .catch((x) => {
-        console.log(x)
-        debugger;
-      })
+      });
   },
 });
