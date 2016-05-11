@@ -1,0 +1,35 @@
+<h1>All Posts</h1>
+
+{{#link-to "dashboard.posts.new"}}New Post{{/link-to}}
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Photo</th>
+      <th>Caption</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each model as |post|}}
+      <tr>
+        <td>{{post.id}}</td>
+        <td><img src="{{post.url}}" alt="" width="50"></td>
+        <td>{{post.caption}}</td>
+        <td>
+          {{#link-to "dashboard.posts.edit" post.id}}
+            <span class="fa fa-pencil"></span>
+          {{/link-to}}
+        </td>
+        <td>
+          <button class="btn" {{action delete post}}>
+            <span class="fa fa-trash"></span>
+          </button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

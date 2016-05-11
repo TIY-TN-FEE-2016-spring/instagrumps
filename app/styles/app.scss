@@ -1,1 +1,11 @@
 @import 'ember-paper';
+
+.btn {
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 0.1rem;
+
+  text-decoration: none;
+  color: inherit;
+  padding: 0.2rem;
+}

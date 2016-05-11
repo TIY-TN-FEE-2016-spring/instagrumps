@@ -1,0 +1,13 @@
+<h1>Edit Post</h1>
+
+{{#simple-form startingValues=model onsubmit=(action savePost model) as |formValues|}}
+  <p>{{input placeholder="URL" value=formValues.url}}</p>
+
+  <p>{{input placeholder="Caption" value=formValues.caption}}</p>
+
+  <p>
+    {{#link-to "dashboard.posts.index" class="btn"}}Cancel{{/link-to}}
+
+    <button class="btn">Save</button>
+  </p>
+{{/simple-form}}
